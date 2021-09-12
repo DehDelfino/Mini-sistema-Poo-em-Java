@@ -42,7 +42,12 @@ public class Cliente {
     public void operar(){
         //, que chama ao menos 3 vezes os métodos para depositar,
         // retirar, verificar saldo e imprimir os dados da respectiva conta corrente
+        for(ContaCorrente contas: contaCorrentes){
+            contas.depositar(valor);
 
+        }
+ 
+    
     }
     
     public void saldoTotal(){
@@ -51,7 +56,7 @@ public class Cliente {
     }
 
     public void imprimir(){
-        //que imprime todos os dados do cliente e das respectivas contas.
+        System.out.println("Dados"  + getContaCorrentes());
 
 
 

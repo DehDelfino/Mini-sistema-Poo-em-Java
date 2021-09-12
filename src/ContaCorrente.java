@@ -17,12 +17,13 @@ c.	Possui a seguinte invariante: o saldo nunca é negativo.
 */
 
 
-public class ContaCorrente {
+public class ContaCorrente  {
   
 
-    private ArrayList <Transacao> transacao  ;
+    private ArrayList <Transacao> transacao ;
     private int agencia;
     private int numero; 
+    private double saldo;
     private Cliente clientes;
 
     
@@ -35,13 +36,17 @@ public class ContaCorrente {
     }
 
 
+
+
   public ArrayList<Transacao> getTransacao() {
     return this.transacao;
   }
 
-  public void setTransacao(Transacao transacao) {
-    this.transacao.add(transacao);
+  public void setTransacao(ArrayList<Transacao> transacao) {
+    this.transacao = transacao;
   }
+
+  
 
   public int getAgencia() {
     return this.agencia;
@@ -68,15 +73,43 @@ public class ContaCorrente {
   }
 
 
-  public void depositar (Transacao transacao){
-
-      this.transacao.add(transacao);
+  public double getSaldo() {
+    return this.saldo;
   }
-  public void retirar (){
+
+  public void setSaldo(double saldo) {
+    this.saldo = saldo;
+  }
+
+
+
+
+
+  public void depositar (float valor ){
+
+  
+    if (0 < valor && getSaldo() > valor){
+      setSaldo( getSaldo() + valor);
+    }
+
+
+    for (Transacao T: transacao){
+
+    }
+      
+  }
+
+  
+
+
+  public void retirar (double valor){
 
     //um valor da conta (adicionar uma transação), desde que o saldo não fique negativo; deve retornar o valor efetivamente retirado. 
-//Ex. Saldo R$10,00 – retirar $25,00 – Transação criada vai ser de $-10. Saldo ficar 0
+    //Ex. Saldo R$10,00 – retirar $25,00 – Transação criada vai ser de $-10. Saldo ficar 0
 
+    if (0 < valor && getSaldo() > valor){
+      setSaldo( getSaldo() - valor);
+    }
     
   }
 
@@ -88,7 +121,7 @@ public class ContaCorrente {
   }
 
   public void extrato (){
-   // todos os dados da conta corrente, suas transações 
+    
 	// Possui a seguinte invariante: o saldo nunca é negativo.
 
     
