@@ -29,7 +29,7 @@ public class ContaCorrente  {
     
 
     public ContaCorrente(int agencia, int numero, Cliente clientes) {
-        transacao = new ArrayList<>();
+        this.transacao = new ArrayList<>();
         this.agencia = agencia;
         this.numero = numero;
         this.clientes = clientes;
@@ -86,23 +86,21 @@ public class ContaCorrente  {
 
 
   public void depositar (float valor ){
-
-  
-    if (0 < valor && getSaldo() > valor){
+    //colocar um while aqui para forçar um falor maior q 0
+    if (0 < valor ){
       setSaldo( getSaldo() + valor);
     }
 
 
-    for (Transacao T: transacao){
 
-    }
+
       
   }
 
   
 
 
-  public void retirar (double valor){
+  public void retirar (double valor, ){
 
     //um valor da conta (adicionar uma transação), desde que o saldo não fique negativo; deve retornar o valor efetivamente retirado. 
     //Ex. Saldo R$10,00 – retirar $25,00 – Transação criada vai ser de $-10. Saldo ficar 0
@@ -110,6 +108,8 @@ public class ContaCorrente  {
     if (0 < valor && getSaldo() > valor){
       setSaldo( getSaldo() - valor);
     }
+
+    
     
   }
 
@@ -125,6 +125,11 @@ public class ContaCorrente  {
 	// Possui a seguinte invariante: o saldo nunca é negativo.
 
     
+  }
+
+
+  public void  socorroDeus(Transacao transacao){
+    this.transacao.add(transacao);
   }
  
 }

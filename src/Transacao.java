@@ -21,27 +21,28 @@ public class Transacao  {
     
     
     
-    public Transacao(String descricao, float valor, LocalDate data , int dia, int mes, int ano) {
+    public Transacao(String descricao, float valor, LocalDate data) {
   
         this.descricao = descricao;
         this.valor = valor;
-        setData( dia, mes,ano);
+        this.data= LocalDate.now();
     
     }
+
     
     public LocalDate getData() {
         return this.data;
     }
 
-    public void setData(int dia,int mes,int ano) {
-        String dMes = ""+mes;
-        String dDia = ""+dia;
-        if(mes < 10)
-            dMes = "0"+mes;
-        if(dia < 10)
-            dDia = "0"+dia;
-        this.data = LocalDate.parse(ano+"-"+dMes+"-"+dDia);
-    }
+    // public void setData(int dia,int mes,int ano) {
+    //     String dMes = ""+mes;
+    //     String dDia = ""+dia;
+    //     if(mes < 10)
+    //         dMes = "0"+mes;
+    //     if(dia < 10)
+    //         dDia = "0"+dia;
+    //     this.data = LocalDate.parse(ano+"-"+dMes+"-"+dDia);
+    // }
 
     public String getDescricao() {
         return descricao;
@@ -73,6 +74,12 @@ public class Transacao  {
     }
 
 
+
+
+
+    public void transacao(){
+        
+    }
 
 
 }
