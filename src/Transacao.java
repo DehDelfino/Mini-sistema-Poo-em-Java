@@ -12,7 +12,7 @@ import java.time.LocalDate;
 // import java.time.ZoneId;
 // import java.util.Date; 
 
-public class Transacao  {
+public class Transacao extend  {
 
     private String descricao;
     private float valor;
